@@ -6,14 +6,10 @@
     <title>Jogo da memória</title>
 </head>
 
-<script>
-    let nome = document.getElementById("nome_id").value;
-
-    alert(nome);
-
-</script>
+<script src="./script.js"></script>
 
 <style>
+
    body{
        font-family: Arial, Helvetica, sans-serif;
 
@@ -155,17 +151,17 @@ margin-top: 5px;
     </div>
 
     <div class="informacao"> 
-        <form class="forms">
+        <form class="forms" onsubmit="comecar()">
             <div class="nome">
                 <div class="nome2"> Nome: </div> 
                  <input class="campo" type="text" name="Nome" placeholder="Ex:Ana" id="nome_id"/> 
             </div> 
 
-            <input class="button" type="submit" name="jogar" value="Jogar" />
+            <input class="button" type="button" onclick="comecar()" name="jogar" value="Jogar" />
             
             <div class="nivel">
                 <div class="nivel2"> Nível: </div>
-                <select class="nivel3"> 
+                <select class="nivel3" id="nivel_id"> 
                     <option> Fácil </option>
                     <option> Médio </option>
                     <option> Difícil </option>
@@ -178,7 +174,7 @@ margin-top: 5px;
     
 
     <div class="container">
-        <div class="tabuleiro"> 
+        <div class="tabuleiro" id="tabuleiro_id"> 
             <div class="card">
                 <img src="img.png" width="80px" height="80px" style="opacity: 85%;" />
             </div>  
