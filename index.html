@@ -20,8 +20,8 @@
     margin: auto;
 }
 .cabeçalho{
-    height: 70px;
-    width: 70%;
+    height: 60px;
+    width: 60%;
     text-align: center;
     line-height: 70px;
     margin-left: 200px;
@@ -45,20 +45,23 @@
     width: 75%;
     height: 500px;
     margin: auto;
-    border: 2px solid #44D62C;
+    border: 2px solid rgb(126, 7, 126);
     border-radius: 5px; 
     display: flex;
-    justify-content: space-around;
+    justify-content: space-between;
+    background-color: rgb(233, 149, 149);
+    flex-wrap: wrap;
+    
 }
 
 .ranking{
-    background-color: blue;
+    background-color: rgb(233, 149, 149);
     width: 20%;
     height: 500px;
-    margin: auto;
-    border: 3px solid #44D62C;
-    border-radius: 2px;
+    border: 2px solid rgb(126, 7, 126);
+    border-radius: 5px;
     color: white;
+    margin-left: 5px;
 
 }
 
@@ -84,21 +87,21 @@
     height: 45px;
     font-size: 25px;
     border-radius: 6px;
-    background-color: blue;
-    border: 2px solid #44D62C;
+    background-color: rgb(126, 7, 126);
+    border: 2px solid  rgb(233, 149, 149);
     color: white;
     
 }
 .button:hover{
-    background-color: #44D62C;
-    border: 2px solid blue;
+    background-color: rgb(233,149,149);
+    border: 2px solid rgb(126, 7, 126);
 
 }
 
 .campo{
 width: 100px;
 height: 25px;
-border: 1px solid blue;
+border: 1px solid rgb(233,149,149);
 border-radius: 3px; 
 font-size: 20px;
 margin-top: 5px;
@@ -123,20 +126,54 @@ margin-top: 5px;
 .nivel3{
     font-size: 18px;
     margin-top: 4px;
-    border: 1px solid blue;
+    border: 1px solid rgb(233,149,149);
     border-radius: 3px;
 }
 .card{
-    background-color: blue;
-    width: 100px;
-    height: 150px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
+   
+    width: 70px;
+    height: 100px;
     border-radius: 4px 20px 4px 20px;
-    
-    
+    position: relative;
+    overflow: hidden;
+    perspective: 600px;
+    margin-top: 5px;
+    margin-bottom: 10px;
+    margin: 20px;
 }
+.visivel{
+    display: block;
+
+}
+.invisivel{
+    display: none;
+    transform:rotateY(180deg);
+}
+.face_front{
+    height: 100%;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: rgb(138, 9, 138);
+    transition: all 1s;
+    position: absolute;
+    backface-visibility: hidden;
+
+}
+.face_back{
+    background-color: rgb(138, 9, 138);
+    transition: all 1s;
+    height: 100%;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+
+}
+
+
 
 
 
@@ -151,7 +188,7 @@ margin-top: 5px;
     </div>
 
     <div class="informacao"> 
-        <form class="forms" onsubmit="comecar()">
+        <form class="forms">
             <div class="nome">
                 <div class="nome2"> Nome: </div> 
                  <input class="campo" type="text" name="Nome" placeholder="Ex:Ana" id="nome_id"/> 
@@ -170,14 +207,11 @@ margin-top: 5px;
 
         </form>
     </div>
-
     
 
     <div class="container">
         <div class="tabuleiro" id="tabuleiro_id"> 
-            <div class="card">
-                <img src="img.png" width="80px" height="80px" style="opacity: 85%;" />
-            </div>  
+              
         </div>
         <div class="ranking">
             <div class="titulo">
