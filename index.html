@@ -32,6 +32,7 @@
     margin: auto;
     margin-top: 15px;
     margin-bottom: 10px;
+    display: flex;
     
 }
 
@@ -67,7 +68,7 @@
 
 .forms{
     display: flex;
-    justify-content: space-around;
+    justify-content: space-between;
     
 }
 .nome{
@@ -86,7 +87,7 @@
     width: 85px;
     height: 45px;
     font-size: 25px;
-    border-radius: 6px;
+    border-radius: 15px;
     background-color: rgb(126, 7, 126);
     border: 2px solid  rgb(233, 149, 149);
     color: white;
@@ -94,7 +95,7 @@
 }
 .button:hover{
     background-color: rgb(233,149,149);
-    border: 2px solid rgb(126, 7, 126);
+    border: 2px solid rgb(126,7,126);
 
 }
 
@@ -172,30 +173,34 @@ margin-top: 5px;
     position: absolute;
 
 }
-
-
-
-
-
+.button_reset{
+    background-color: rgb(233, 149, 149);
+    width: 25px;
+    height: 25px;
+    margin-left: 25px;
+    border: 2px solid  rgb(138,9,138);
+    border-radius: 6px;
+}
+.button:hover{
+    background-color: rgb(138,9,138);
+    border: 2px solid rgb(233,149,149);
+}
 
 </style>
 
 <body>
     
 <div class="pai">
-    <div class="cabeçalho"> 
+     <div class="cabeçalho"> 
         <h1> Jogo da memória </h1>
-    </div>
-
-    <div class="informacao"> 
+    </div> 
+    <div class="informacao">
         <form class="forms">
             <div class="nome">
                 <div class="nome2"> Nome: </div> 
                  <input class="campo" type="text" name="Nome" placeholder="Ex:Ana" id="nome_id"/> 
             </div> 
-
             <input class="button" type="button" onclick="comecar()" name="jogar" value="Jogar" />
-            
             <div class="nivel">
                 <div class="nivel2"> Nível: </div>
                 <select class="nivel3" id="nivel_id"> 
@@ -207,8 +212,8 @@ margin-top: 5px;
 
         </form>
     </div>
-    
-
+        <div class="button_reset" type="button" onclick="reset()"><img src="refrescar.png" width="23px" height="23px" />
+    </div>
     <div class="container">
         <div class="tabuleiro" id="tabuleiro_id"> 
               

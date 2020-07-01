@@ -1,3 +1,12 @@
+//fução para resetar 
+function reset(){
+  let resetar = document.getElementById("tabuleiro_id")
+  let numero_de_cartas = resetar.children.length
+  
+  for (let i = numero_de_cartas -1; i >= 0; i--) 
+    resetar.children[i].remove()
+}
+
 //array para setar os id das cartas
  let setId = [];
 
@@ -60,7 +69,6 @@ function virarCarta()
     //formando um array que mostra o estado da carta,se esta visivel ou invisivel do front
     for (let i = 0; i < numeros_de_cartas; i++) {
       cartas_selecionada[i] = tabuleiro.children[i].children[1].classList[1]
-      console.log(cartas_selecionada)
       
     }
     //logica da pontuação, e finalização do jogo
@@ -68,12 +76,11 @@ function virarCarta()
     cartas_selecionada.forEach(element => {
       if (element == "visivel"){
         ponto++
-        console.log(ponto)
       }else{
         return
       }
       if (ponto == numeros_de_cartas ) {
-        alert("voce ganhou")
+        alert("Você ganhou!!")
       }
       
     });
@@ -121,6 +128,7 @@ function virarCarta()
 }
 
 function comecar() {
+
     let nome = document.getElementById("nome_id").value;
     let nivel = document.getElementById("nivel_id").value;
     let numero_de_cartas = 0;
