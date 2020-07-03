@@ -1,5 +1,6 @@
 //fução para resetar 
-function reset(){
+function reset() {
+  alert("o jogo sera resetado")
   let resetar = document.getElementById("tabuleiro_id")
   let numero_de_cartas = resetar.children.length
   
@@ -72,17 +73,20 @@ function virarCarta()
       
     }
     //logica da pontuação, e finalização do jogo
+    let area_pontos = document.getElementById("pontuacao_id")
     let ponto = 0
+
     cartas_selecionada.forEach(element => {
       if (element == "visivel"){
         ponto++
-      }else{
+        console.log(ponto)
+      }
+      else{
         return
       }
       if (ponto == numeros_de_cartas ) {
         alert("Você ganhou!!")
       }
-      
     });
     
     
@@ -118,7 +122,6 @@ function virarCarta()
         card_front = cardVirada[i].children[1].classList;
         card_front.remove("visivel");
         card_front.add("invisivel");
-        console.log(card_front);
       }
 
       //reseta a variavel de controle e array, para a proxima chamada da função
@@ -128,7 +131,7 @@ function virarCarta()
 }
 
 function comecar() {
-
+  reset()
     let nome = document.getElementById("nome_id").value;
     let nivel = document.getElementById("nivel_id").value;
     let numero_de_cartas = 0;
@@ -164,8 +167,6 @@ function comecar() {
 
       //gerando um número aleatorio de 0 a 15
       let num_aleatorio = Math.floor(Math.random() * 15);
-
-      console.log(num_aleatorio)
 
        //esta variavel irá pegar um src aleatorio do meu banco de dados da img
        let verifica = DadosImg[num_aleatorio]
@@ -208,7 +209,7 @@ function comecar() {
            
 
         divCard=document.createElement("div");
-        divCard.setAttribute("class", "card");
+        divCard.setAttribute("class", "card", "style");
         divCard.classList.add(class_card);
         divCard.setAttribute("id",set_id);
         divCard.setAttribute("onclick","virarCarta()");
@@ -224,7 +225,7 @@ function comecar() {
 
         
         face_front=document.createElement("div");
-        face_front.setAttribute("class", "face_front invisivel");
+        face_front.setAttribute("class", "face_front invisivel","heigth","16.7%");
 
         img_front=document.createElement("img");
         img_front.setAttribute("src",imgCard);
