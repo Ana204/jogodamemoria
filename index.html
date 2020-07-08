@@ -196,11 +196,61 @@ margin-top: 5px;
     border-radius: 6px;
     display: flex; 
 }
+.manual{
+    background-color: rgb(233,149,149);
+    width: 25px;
+    height: 25px;
+    margin-left: 15px;
+    border: 2px solid rgb(138,9,138); 
+    border-radius: 4px;
+}
+.pop_up{
+    border: 5px solid rgb(138, 9, 138);
+    border-radius: 2px;
+    height: 50%;
+    width: 40%; 
+    position: fixed;
+    top: 0 ; bottom: 0;
+    left: 0; right: 200px;
+    margin: auto;
+    padding: 10px;
+    display: none;
+}
+
+.fechar{
+    background-color: rgb(138,9,138);
+    height: 30px;
+    width: 30px;
+    border-radius: 30px;
+    border: 1px solid black;
+    text-align: center;
+    font-size: 20px;
+    line-height: 30px;
+}
 
 </style>
 
 <body>
-    
+    <div class="pop_up">
+        <div class="fechar" onclick="fecharPop()"> X </div>
+            <div class="conteudo_pop"> 
+1-Misturar e distribuir as cartas sobre uma mesa, com os desenhos virados para baixo. <br> <br>
+
+2- Fazer o par o ímpar para ver com que participante se começa o jogo.<br> <br>
+
+3- Cada jogador deve virar duas cartas buscando um par igual. <br> <br>
+
+4- Se o jogador consegue encontrar duas cartas iguais à primeira, tem direito a jogar outra vez ou tentar outro par. <br> <br>
+
+5- No caso do jogador, ao virar duas cartas e que os seus desenhos não coincidam, passar a jogada para o seguinte participante.<br> <br>
+
+6- As cartas que formarem par devem ser retiradas do jogo e conta como ponto para o participante.<br> <br>
+
+7- Ganha o jogo o participante que reunir mais pares de cartas.
+
+
+            </div>
+    </div>
 <div class="pai">
      <div class="cabeçalho"> 
         <h1> Jogo da memória </h1>
@@ -225,6 +275,7 @@ margin-top: 5px;
     </div>
     <div class="painel">
         <div class="button_reset" type="button" onclick="reset()"><img src="refrescar.png" width="23px" height="23px" /></div>
+        <div class="manual" onclick="abrirPop()"> <img src="manual.png" width="23px" height="23px"/> </div>
             <div class="pontos"> Pontos:
                 <span id="pontuacao"></span>
              </div>

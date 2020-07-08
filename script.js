@@ -241,3 +241,10 @@ function comecar() {
 
     }
 }
+function abrirPop() {
+  document.getElementById("pop_up").style.display = 'block';
+}
+
+function fecharPop() {
+  document.getElementById("pop_up").style.display='none';
+}
