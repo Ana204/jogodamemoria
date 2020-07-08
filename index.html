@@ -208,9 +208,9 @@ margin-top: 5px;
     border: 5px solid rgb(138, 9, 138);
     border-radius: 2px;
     height: 50%;
-    width: 40%; 
+    width: 50%; 
     position: fixed;
-    top: 0 ; bottom: 0;
+    top: 30% ; bottom: 0;
     left: 0; right: 200px;
     margin: auto;
     padding: 10px;
@@ -231,7 +231,7 @@ margin-top: 5px;
 </style>
 
 <body>
-    <div class="pop_up">
+    <div class="pop_up" id="popUp">
         <div class="fechar" onclick="fecharPop()"> X </div>
             <div class="conteudo_pop"> 
 1-Misturar e distribuir as cartas sobre uma mesa, com os desenhos virados para baixo. <br> <br>
@@ -275,7 +275,7 @@ margin-top: 5px;
     </div>
     <div class="painel">
         <div class="button_reset" type="button" onclick="reset()"><img src="refrescar.png" width="23px" height="23px" /></div>
-        <div class="manual" onclick="abrirPop()"> <img src="manual.png" width="23px" height="23px"/> </div>
+        <div class="manual" onclick="teste()"> <img src="manual.png" width="23px" height="23px"/> </div>
             <div class="pontos"> Pontos:
                 <span id="pontuacao"></span>
              </div>
